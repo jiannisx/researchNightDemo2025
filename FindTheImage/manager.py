@@ -12,16 +12,16 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Βρες την Εικόνα")
 
 # Global variables (μπορείτε να αλλάξετε αυτές τις διαδρομές)
-TARGET_IMAGE_PATH = "FindTheImage\\dataset\\landscape.jpg"  # διαδρομή εικόνας-στόχου (global για και τα δύο παιχνίδια)
-IMAGES_FOLDER = "FindTheImage\\dataset"  # φάκελος dataset (global)
-SOUNDS_FOLDER = "FindTheImage\\sounds"  # φάκελος ήχων
+TARGET_IMAGE_PATH = "dataset\\landscape.jpg"  # διαδρομή εικόνας-στόχου (global για και τα δύο παιχνίδια)
+IMAGES_FOLDER = "dataset"  # φάκελος dataset (global)
+SOUNDS_FOLDER = "sounds"  # φάκελος ήχων
 
 # --- ΣΤΑΤΙΚΕΣ ΕΙΚΟΝΕΣ ΓΙΑ ΤΟ 2Ο ΠΑΙΧΝΙΔΙ (σταθερές, θα τις αλλάξετε εσείς) ---
 SECOND_GAME_IMAGES = [
-    "FindTheImage\\dataset\\landscape_1.jpg",
-    "FindTheImage\\dataset\\dog.jpg",
-    "FindTheImage\\dataset\\santorini.jpg",
-    "FindTheImage\\dataset\\poppy.jpg"
+    "dataset\\landscape_1.jpg",
+    "dataset\\dog.jpg",
+    "dataset\\santorini.jpg",
+    "dataset\\poppy.jpg"
 ]
 # Το ποια από αυτές είναι αρχικά "active" (θα την αλλάξετε με το επιθυμητό path)
 SECOND_GAME_ACTIVE_PATH = SECOND_GAME_IMAGES[0]
@@ -30,9 +30,9 @@ SECOND_GAME_ACTIVE_PATH = SECOND_GAME_IMAGES[0]
 # θα αντικαταστήσετε τα paths ανάλογα:
 SECOND_STAGE_IMAGES = {
     # όταν πατήσει την active της πρώτης οθόνης -> δείχνει αυτές τις δύο
-    "stage1": ["FindTheImage\\dataset\\landscape_wrong.jpg", "FindTheImage\\dataset\\landscape_2.jpg"],
+    "stage1": ["dataset\\landscape_wrong.jpg", "dataset\\landscape_2.jpg"],
     # μετά -> τελική δύο εικόνες (una θα είναι active)
-    "stage2": ["FindTheImage\\dataset\\landscape.jpg", "FindTheImage\\dataset\\landscape_3.jpg"]
+    "stage2": ["dataset\\landscape.jpg", "dataset\\landscape_3.jpg"]
 }
 # Από αυτές, σε κάθε stage επιλέγουμε ποια είναι active (paths)
 SECOND_STAGE1_ACTIVE = SECOND_STAGE_IMAGES["stage1"][1]
@@ -120,7 +120,7 @@ class GameManager:
 
         # background
         try:
-            self.background_image = pygame.image.load("FindTheImage/background.jpg")
+            self.background_image = pygame.image.load("background.jpg")
             self.background_image = pygame.transform.scale(self.background_image, (WIDTH, HEIGHT))
         except:
             self.background_image = None
